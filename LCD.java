@@ -1,6 +1,5 @@
 package katas.tdd.test;
 
-import java.io.IOException;
 
 public class LCD {
 
@@ -19,7 +18,7 @@ public class LCD {
 			{ MODE8, MODE7, MODE8, MODE7, MODE8 },// 1
 			{ MODE1, MODE7, MODE3, MODE6, MODE1 },// 2
 			{ MODE1, MODE7, MODE1, MODE7, MODE1 },// 3
-			{ MODE2, MODE3, MODE7 },// 4
+			{ MODE8, MODE2, MODE3, MODE7, MODE7 },// 4
 			{ MODE1, MODE6, MODE1, MODE7, MODE1 },// 5
 			{ MODE1, MODE6, MODE1, MODE4, MODE1 },// 6
 			{ MODE1, MODE7, MODE8, MODE7, MODE8 },// 7
@@ -28,7 +27,7 @@ public class LCD {
 
 	};
 	final String SPACE =" " ;
-	public String getLCDNumberRepresentation(Integer number) throws NumberFormatException, IOException {
+	public String getLCDNumberRepresentation(Integer number)  {
 
 		String representationOfTheNumberOnLCDWay = "";
 		char[] numbers = number.toString().toCharArray();
@@ -36,8 +35,13 @@ public class LCD {
 
 			for (char character : numbers) {
 				
-				representationOfTheNumberOnLCDWay += howTheNumberisFormed[Integer.parseInt(String.valueOf(character))][(i-1)]
-						+ SPACE;
+			
+				
+					
+					representationOfTheNumberOnLCDWay += howTheNumberisFormed[Integer.parseInt(String.valueOf(character))][(i-1)]
+							+ SPACE;	
+				
+				
 			}
 
 			representationOfTheNumberOnLCDWay += ENTER;
